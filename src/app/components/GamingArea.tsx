@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 import Totemrock from './Totemrock';
 
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+
 
 function GamingArea({changeState, resetState, state}: any) {
 
