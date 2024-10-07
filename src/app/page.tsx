@@ -17,7 +17,10 @@ const VerticalProgressBar: React.FC<ProgressBarProps> = ({ value, maxValue, step
   const percentage = (value / maxValue) * 100;
 
   return (
-    <div className="relative h-[600px] w-5">
+    <div className=' flex flex-col  items-centers justify-center '>
+ <img className='w-20 ' src="/assets/jackpot.png" alt="" />
+
+    <div className="relative h-[600px] w-5   ml-7">
       <Progress 
         value={percentage} 
         className="h-full w-full bg-gray-800 rounded-full [&>div]:bg-green-500 [&>div]:rounded-full"
@@ -31,17 +34,15 @@ const VerticalProgressBar: React.FC<ProgressBarProps> = ({ value, maxValue, step
           <span className="text-sm text-white font-bold">{step.label}</span>
         </div>
       ))}
-      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 flex justify-center items-center ">
-        <span><img className='w-32  ' src="/assets/jackpot.png" alt="" /></span>
-      </div>
     
+    </div>
     </div>
   );
 };
 
 
   const steps = [
-    { value: 1, label: "1x" },
+    { value: 1, label: "0x" },
     { value: 1.5, label: "1.5x" },
     { value: 2.5, label: "2.5x" },
     { value: 5, label: "5x" },
@@ -69,22 +70,10 @@ function Page() {
     style={{ backgroundImage: "url('/assets/background.png')" }}>
     <Navbar />
     <div className='flex relative justify-center items-center'>
-   
- 
-
 
       {/* <Console setIsAutoPicking = {setIsAutoPicking} setStart = {setStart} /> */}
-      <GamingArea changeState = {changeState} resetState = {resetState} state = {state}/>
-
-
-
- 
-  
-    <VerticalProgressBar value={state*(100/7)} maxValue={100} steps={steps} />
-   
-  
-
-
+      <GamingArea changeState = {changeState} resetState = {resetState} state = {state} setState = {setState}/>
+      <VerticalProgressBar value={state*(100/7)} maxValue={100} steps={steps} />
    
   </div>
 </div>
